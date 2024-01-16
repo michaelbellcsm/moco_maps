@@ -1,0 +1,234 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta charset="utf-8">
+	<title>One-Half Mile Radii Around Metro Stations</title>
+	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+		integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+	<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+		integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+
+	<style>
+		.halfmile {
+			height: 480px;
+			width: 680px;
+		}
+
+		h2 {
+			margin-top: 75px;
+		}
+	</style>
+</head>
+
+<body class="mt-5 mx-5">
+	<h1>One-Half Mile Radii Around Metro Stations</h1>
+	<h2>Shady Grove</h2>
+			<div id="map_shady" class="halfmile"></div>
+			<h2>Rockville</h2>
+			<div id="map_rockville" class="halfmile"></div>
+			<h2>Twinbrook</h2>
+			<div id="map_twinbrook" class="halfmile"></div>
+			<h2>North Bethesda</h2>
+			<div id="map_north_bethesda" class="halfmile"></div>
+			<h2>Grovesnor</h2>
+			<div id="map_grovesnor" class="halfmile"></div>
+			<h2>Medical Center</h2>
+			<div id="map_medical_center" class="halfmile"></div>
+			<h2>Bethesda</h2>
+			<div id="map_bethesda" class="halfmile"></div>
+			<h2>Friendship Heights</h2>
+			<div id="map_friendship" class="halfmile"></div>
+			<h2>Takoma Park</h2>
+			<div id="map_takoma" class="halfmile"></div>
+			<h2>Silver Spring</h2>
+			<div id="map_silver_spring" class="halfmile"></div>
+			<h2>Forrest Glen</h2>
+			<div id="map_forrest_glen" class="halfmile"></div>
+			<h2>Wheaton</h2>
+			<div id="map_wheaton" class="halfmile"></div>
+			<h2>Glenmont</h2>
+			<div id="map_glenmont" class="halfmile"></div>
+
+</body>
+<script>
+	/* Shady Grove */
+	const mapstring = 'https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}'
+	var map_shady = L.map('map_shady').setView([39.119956403050715, -77.16480432846824], 15);
+	L.tileLayer(mapstring, {
+		maxZoom: 30,
+		attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+	}).addTo(map_shady);
+	var marker = L.marker([39.119956403050715, -77.16480432846824]).addTo(map_shady);
+	var circle = L.circle([39.119956403050715, -77.16480432846824], {
+		color: 'red',
+		fillColor: '#f03',
+		fillOpacity: 0.0,
+		radius: 805
+	}).addTo(map_shady);
+	/* Rockville*/
+	var map_rockville = L.map('map_rockville').setView([39.084267658173005, -77.14681712968269], 15);
+	L.tileLayer(mapstring, {
+		maxZoom: 30,
+		attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+	}).addTo(map_rockville);
+	var marker = L.marker([39.084267658173005, -77.14681712968269]).addTo(map_rockville);
+	var circle = L.circle([39.084267658173005, -77.14681712968269], {
+		color: 'red',
+		fillColor: '#f03',
+		fillOpacity: 0.0,
+		radius: 805
+	}).addTo(map_rockville);
+	/* Twinbrook*/
+	var map_twinbrook = L.map('map_twinbrook').setView([39.06258654769186, -77.1209568499535], 15);
+	L.tileLayer(mapstring, {
+		maxZoom: 30,
+		attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+	}).addTo(map_twinbrook);
+	var marker = L.marker([39.06258654769186, -77.1209568499535]).addTo(map_twinbrook);
+	var circle = L.circle([39.06258654769186, -77.1209568499535], {
+		color: 'red',
+		fillColor: '#f03',
+		fillOpacity: 0.0,
+		radius: 805
+	}).addTo(map_twinbrook);
+	/* North Bethesda*/
+	var map_north_bethesda = L.map('map_north_bethesda').setView([39.0475459074609, -77.11264139914508], 15);
+	L.tileLayer(mapstring, {
+		maxZoom: 30,
+		attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+	}).addTo(map_north_bethesda);
+	var marker = L.marker([39.0475459074609, -77.11264139914508]).addTo(map_north_bethesda);
+	var circle = L.circle([39.0475459074609, -77.11264139914508], {
+		color: 'red',
+		fillColor: '#f03',
+		fillOpacity: 0.0,
+		radius: 805
+	}).addTo(map_north_bethesda);
+	/* Grovesnor */
+	var map_grovesnor = L.map('map_grovesnor').setView([39.029378276598486, -77.10394567806867], 15);
+	L.tileLayer(mapstring, {
+		maxZoom: 30,
+		attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+	}).addTo(map_grovesnor);
+	var marker = L.marker([39.029378276598486, -77.10394567806867]).addTo(map_grovesnor);
+	var circle = L.circle([39.029378276598486, -77.10394567806867], {
+		color: 'red',
+		fillColor: '#f03',
+		fillOpacity: 0.0,
+		radius: 805
+	}).addTo(map_grovesnor);
+	/* Medical Center */
+	var map_medical_center = L.map('map_medical_center').setView([38.999103026232866, -77.0978016284078], 15);
+	L.tileLayer(mapstring, {
+		maxZoom: 30,
+		attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+	}).addTo(map_medical_center);
+	var marker = L.marker([38.999103026232866, -77.0978016284078]).addTo(map_medical_center);
+	var circle = L.circle([38.999103026232866, -77.0978016284078], {
+		color: 'red',
+		fillColor: '#f03',
+		fillOpacity: 0.0,
+		radius: 805
+	}).addTo(map_medical_center);
+	/* Bethesda */
+	var map_bethesda = L.map('map_bethesda').setView([39.029378276598486, -77.10394567806867], 15);
+	L.tileLayer(mapstring, {
+		maxZoom: 30,
+		attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+	}).addTo(map_bethesda);
+	var marker = L.marker([39.029378276598486, -77.10394567806867]).addTo(map_bethesda);
+	var circle = L.circle([39.029378276598486, -77.10394567806867], {
+		color: 'red',
+		fillColor: '#f03',
+		fillOpacity: 0.0,
+		radius: 805
+	}).addTo(map_bethesda);
+	/* Friendship */
+	var map_friendship = L.map('map_friendship').setView([38.96093755862263, -77.08608894872218], 15);
+	L.tileLayer(mapstring, {
+		maxZoom: 30,
+		attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+	}).addTo(map_friendship);
+	var marker = L.marker([38.96093755862263, -77.08608894872218]).addTo(map_friendship);
+	var circle = L.circle([38.96093755862263, -77.08608894872218], {
+		color: 'red',
+		fillColor: '#f03',
+		fillOpacity: 0.0,
+		radius: 805
+	}).addTo(map_friendship);
+	/* Takoma Park */
+	var map_takoma = L.map('map_takoma').setView([38.975788227125655, -77.01791803210209], 15);
+	L.tileLayer(mapstring, {
+		maxZoom: 30,
+		attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+	}).addTo(map_takoma);
+	var marker = L.marker([38.975788227125655, -77.01791803210209]).addTo(map_takoma);
+	var circle = L.circle([38.975788227125655, -77.01791803210209], {
+		color: 'red',
+		fillColor: '#f03',
+		fillOpacity: 0.0,
+		radius: 805
+	}).addTo(map_takoma);
+	/* Silver Spring */
+	var map_silver_spring = L.map('map_silver_spring').setView([38.99371624764013, -77.0312368400557], 15);
+	L.tileLayer(mapstring, {
+		maxZoom: 30,
+		attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+	}).addTo(map_silver_spring);
+	var marker = L.marker([38.99371624764013, -77.0312368400557]).addTo(map_silver_spring);
+	var circle = L.circle([38.99371624764013, -77.0312368400557], {
+		color: 'red',
+		fillColor: '#f03',
+		fillOpacity: 0.0,
+		radius: 805
+	}).addTo(map_silver_spring);
+	/* Forrest Glen */
+	var map_forrest_glen = L.map('map_forrest_glen').setView([39.015466374587945, -77.04304046817924], 15);
+	L.tileLayer(mapstring, {
+		maxZoom: 30,
+		attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+	}).addTo(map_forrest_glen);
+	var marker = L.marker([39.015466374587945, -77.04304046817924]).addTo(map_forrest_glen);
+	var circle = L.circle([39.015466374587945, -77.04304046817924], {
+		color: 'red',
+		fillColor: '#f03',
+		fillOpacity: 0.0,
+		radius: 805
+	}).addTo(map_forrest_glen);
+	/* Wheaton */
+	var map_wheaton = L.map('map_wheaton').setView([39.038742304998834, -77.05031018976976], 15);
+	L.tileLayer(mapstring, {
+		maxZoom: 30,
+		attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+	}).addTo(map_wheaton);
+	var marker = L.marker([39.038742304998834, -77.05031018976976]).addTo(map_wheaton);
+	var circle = L.circle([39.038742304998834, -77.05031018976976], {
+		color: 'red',
+		fillColor: '#f03',
+		fillOpacity: 0.0,
+		radius: 805
+	}).addTo(map_wheaton);
+	/* Glenmont */
+	var map_glenmont = L.map('map_glenmont').setView([39.061900919401026, -77.05372344871779], 15);
+	L.tileLayer(mapstring, {
+		maxZoom: 30,
+		attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+	}).addTo(map_glenmont);
+	var marker = L.marker([39.061900919401026, -77.05372344871779]).addTo(map_glenmont);
+	var circle = L.circle([39.061900919401026, -77.05372344871779], {
+		color: 'red',
+		fillColor: '#f03',
+		fillOpacity: 0.0,
+		radius: 805
+	}).addTo(map_glenmont);
+</script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+	integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+	crossorigin="anonymous"></script>
+</body>
+
+</html>
