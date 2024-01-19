@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta charset="utf-8">
+	<title>One-Half Mile Radii Around Bus Transit Centers</title>
+	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+		integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+	<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+		integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+
+	<style>
+		.halfmile {
+			height: 480px;
+			width: 680px;
+		}
+
+		h2 {
+			margin-top: 75px;
+		}
+	</style>
+</head>
+
+<body class="mt-5 mx-5">
+	<h1>One-Half Mile Radii Around Bus Transit Centers</h1>
+	<h2>Silver Spring</h2>
+			<div id="map_btc_silver_spring" class="halfmile"></div>
+	<h2>White Oak</h2>
+			<div id="map_btc_white_oak" class="halfmile"></div>
+			<h2>Montgomery Mall</h2>
+			<div id="map_btc_montgomery_mall" class="halfmile"></div>
+			<h2>Germantown</h2>
+			<div id="map_btc_germantown" class="halfmile"></div>
+			<h2>Lake Forest</h2>
+			<div id="map_btc_lake_forest" class="halfmile"></div>
+			<h2>Takoma Langley</h2>
+			<div id="map_btc_takoma_langley" class="halfmile"></div>
+			<h2>Traville Gateway</h2>
+			<div id="map_btc_traville_gateway" class="halfmile"></div>
+
+</body>
+<script>
+	const greenIcon = L.icon({
+    iconUrl: 'markers/marker-icon-green.png',
+	iconSize: [40,66]
+});
+const greenCircleOptions = {
+	radius: 805,
+	color: '#00ff4c',
+	fill: false
+};
+const redCircleOptions = {
+	color: 'red',
+		fillColor: '#f03',
+		fillOpacity: 0.0,
+		radius: 805
+}
+	/* Silver Spring BTC */
+	const mapstring = 'https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}'
+	var map_btc_silver_spring = L.map('map_btc_silver_spring').setView([38.994041, -77.030027], 15);
+	L.tileLayer(mapstring, {
+		maxZoom: 30,
+		attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+	}).addTo(map_btc_silver_spring);
+	var marker = L.marker([38.994041, -77.030027], {icon: greenIcon}).addTo(map_btc_silver_spring);
+	var circle = L.circle([38.994041, -77.030027], greenCircleOptions).addTo(map_btc_silver_spring);
+	/* White Oak BTC*/
+	var map_btc_white_oak = L.map('map_btc_white_oak').setView([39.040683, -76.988641], 15);
+	L.tileLayer(mapstring, {
+		maxZoom: 30,
+		attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+	}).addTo(map_btc_white_oak);
+	var marker = L.marker([39.040683, -76.988641], {icon: greenIcon}).addTo(map_btc_white_oak);
+	var circle = L.circle([39.040683, -76.988641], greenCircleOptions).addTo(map_btc_white_oak);
+	/* Mongtomery Mall BTC*/
+	var map_btc_montgomery_mall = L.map('map_btc_montgomery_mall').setView([39.025911, -77.142657], 15);
+	L.tileLayer(mapstring, {
+		maxZoom: 30,
+		attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+	}).addTo(map_btc_montgomery_mall);
+	var marker = L.marker([39.025911, -77.142657], {icon: greenIcon}).addTo(map_btc_montgomery_mall);
+	var circle = L.circle([39.025911, -77.142657], greenCircleOptions).addTo(map_btc_montgomery_mall);
+
+	/* Germantown BTC*/
+	var map_btc_germantown = L.map('map_btc_germantown').setView([39.182882, -77.261181], 15);
+	L.tileLayer(mapstring, {
+		maxZoom: 30,
+		attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+	}).addTo(map_btc_germantown);
+	var marker = L.marker([39.182882, -77.261181], {icon: greenIcon}).addTo(map_btc_germantown);
+	var circle = L.circle([39.182882, -77.261181], greenCircleOptions).addTo(map_btc_germantown);
+	/* Lake Forest BTC*/
+	var map_btc_lake_forest = L.map('map_btc_lake_forest').setView([39.153026, -77.199382], 15);
+	L.tileLayer(mapstring, {
+		maxZoom: 30,
+		attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+	}).addTo(map_btc_lake_forest);
+	var marker = L.marker([39.153026, -77.199382], {icon: greenIcon}).addTo(map_btc_lake_forest);
+	var circle = L.circle([39.153026, -77.199382], greenCircleOptions).addTo(map_btc_lake_forest);
+/* Takoma Langley BTC*/
+var map_btc_takoma_langley = L.map('map_btc_takoma_langley').setView([38.989831, -76.987733], 15);
+	L.tileLayer(mapstring, {
+		maxZoom: 30,
+		attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+	}).addTo(map_btc_takoma_langley);
+	var marker = L.marker([38.989831, -76.987733], {icon: greenIcon}).addTo(map_btc_takoma_langley);
+	var circle = L.circle([38.989831, -76.987733], greenCircleOptions).addTo(map_btc_takoma_langley);
+		/*Traville Gateway BTC */
+	var map_btc_traville_gateway = L.map('map_btc_traville_gateway').setView([39.092745, -77.202562], 15);
+	L.tileLayer(mapstring, {
+		maxZoom: 30,
+		attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+	}).addTo(map_btc_traville_gateway);
+	var marker = L.marker([39.092745, -77.202562], {icon: greenIcon}).addTo(map_btc_traville_gateway);
+	var circle = L.circle([39.092745, -77.202562], greenCircleOptions).addTo(map_btc_traville_gateway);
+	
+	
+</script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+	integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+	crossorigin="anonymous"></script>
+</body>
+
+</html>
