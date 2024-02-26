@@ -43,6 +43,14 @@ const purpleIcon = L.icon({
 	iconAnchor: [20, 66]
 });
 
+
+const redIcon = L.icon({
+    iconUrl: 'markers/marker-icon-red.png',
+	iconSize: [40,66],
+	iconAnchor: [20, 66]
+});
+
+
 const greenCircleOptions = {
 	radius: 805,
 	color: '#00ff4c',
@@ -77,6 +85,9 @@ const countyBorderOptions = {
 		maxZoom: 30,
 		attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
 	}).addTo(map_county_transit_centers)
+
+
+	/* Bus transit centers */
 	var marker = L.marker([38.994041, -77.030027], {icon: greenIcon}).addTo(map_county_transit_centers)
 	var circle = L.circle([38.994041, -77.030027], greenCircleOptions).addTo(map_county_transit_centers)
 	/* White Oak BTC*/
@@ -99,7 +110,7 @@ const countyBorderOptions = {
 	var marker = L.marker([39.092745, -77.202562], {icon: greenIcon}).addTo(map_county_transit_centers)
 	var circle = L.circle([39.092745, -77.202562], greenCircleOptions).addTo(map_county_transit_centers)
 	
-
+/* Purple Line */
 	/* Bethesda Purple */
 	var marker = L.marker([38.981134097399774, -77.0951442995115], {icon: purpleIcon}).addTo(map_county_transit_centers);
 	var circle = L.circle([38.981134097399774, -77.0951442995115],purpleCircleOptions).addTo(map_county_transit_centers);
@@ -145,6 +156,60 @@ const countyBorderOptions = {
 	var circle = L.circle([38.98990041615116, -76.98802761825584], purpleCircleOptions).addTo(map_county_transit_centers);
 
 
+/* Red Line */
+
+	/* Shady Grove */
+	
+	var marker = L.marker([39.119956403050715, -77.16480432846824], {icon: redIcon}).addTo(map_county_transit_centers);
+	var circle = L.circle([39.119956403050715, -77.16480432846824], redCircleOptions).addTo(map_county_transit_centers);
+	/* Rockville*/
+	
+	var marker = L.marker([39.084267658173005, -77.14681712968269], {icon: redIcon}).addTo(map_county_transit_centers);
+	var circle = L.circle([39.084267658173005, -77.14681712968269], redCircleOptions).addTo(map_county_transit_centers);
+	/* Twinbrook*/
+	
+	var marker = L.marker([39.06258654769186, -77.1209568499535], {icon: redIcon}).addTo(map_county_transit_centers);
+	var circle = L.circle([39.06258654769186, -77.1209568499535], redCircleOptions).addTo(map_county_transit_centers);
+	/* North Bethesda*/
+	
+	var marker = L.marker([39.0475459074609, -77.11264139914508], {icon: redIcon}).addTo(map_county_transit_centers);
+	var circle = L.circle([39.0475459074609, -77.11264139914508], redCircleOptions).addTo(map_county_transit_centers);
+	/* Grovesnor */
+	
+	var marker = L.marker([39.029378276598486, -77.10394567806867], {icon: redIcon}).addTo(map_county_transit_centers);
+	var circle = L.circle([39.029378276598486, -77.10394567806867], redCircleOptions).addTo(map_county_transit_centers);
+	/* Medical Center */
+	
+	var marker = L.marker([38.999103026232866, -77.0978016284078], {icon: redIcon}).addTo(map_county_transit_centers);
+	var circle = L.circle([38.999103026232866, -77.0978016284078], redCircleOptions).addTo(map_county_transit_centers);
+	/* Bethesda */
+	
+	var marker = L.marker([39.029378276598486, -77.10394567806867], {icon: redIcon}).addTo(map_county_transit_centers);
+	var circle = L.circle([39.029378276598486, -77.10394567806867], redCircleOptions).addTo(map_county_transit_centers);
+	/* Friendship */
+	
+	var marker = L.marker([38.96093755862263, -77.08608894872218], {icon: redIcon}).addTo(map_county_transit_centers);
+	var circle = L.circle([38.96093755862263, -77.08608894872218], redCircleOptions).addTo(map_county_transit_centers);
+	/* Takoma Park */
+	
+	var marker = L.marker([38.975788227125655, -77.01791803210209], {icon: redIcon}).addTo(map_county_transit_centers);
+	var circle = L.circle([38.975788227125655, -77.01791803210209], redCircleOptions).addTo(map_county_transit_centers);
+	/* Silver Spring */
+	
+	var marker = L.marker([38.99371624764013, -77.0312368400557], {icon: redIcon}).addTo(map_county_transit_centers);
+	var circle = L.circle([38.99371624764013, -77.0312368400557], redCircleOptions).addTo(map_county_transit_centers);
+	/* Forrest Glen */
+	
+	var marker = L.marker([39.015466374587945, -77.04304046817924], {icon: redIcon}).addTo(map_county_transit_centers);
+	var circle = L.circle([39.015466374587945, -77.04304046817924], redCircleOptions).addTo(map_county_transit_centers);
+	/* Wheaton */
+	
+	var marker = L.marker([39.038742304998834, -77.05031018976976], {icon: redIcon}).addTo(map_county_transit_centers);
+	var circle = L.circle([39.038742304998834, -77.05031018976976],redCircleOptions).addTo(map_county_transit_centers);
+	/* Glenmont */
+	
+	var marker = L.marker([39.061900919401026, -77.05372344871779], {icon: redIcon}).addTo(map_county_transit_centers);
+	var circle = L.circle([39.061900919401026, -77.05372344871779], redCircleOptions).addTo(map_county_transit_centers);
 
 
 	
