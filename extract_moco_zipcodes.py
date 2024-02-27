@@ -88,7 +88,7 @@ zip_colors = {
 '28032': '1A7C43',
 '20847': '177B40',
 '20940': '15793E',
-'20895': 'FF0000',
+'20895': '12783C',
 '20190': '10763A',
 '20750': '0D7537',
 '20916': '0A7335',
@@ -102,8 +102,8 @@ zip_colors = {
 
 
 f = open('/home/abba/maryland-politics/clean_slate_moco/housing_assessment_data/Maryland_Political_Boundaries_-_ZIP_Codes_-_5_Digit.geojson','r')
-outfile = open('/tmp/moco_zip_boundaries.js','w')
-outfile.write('var zipBorderLatLongs = new Map();\n')
+outfile = open('js/zip_lat_long.js','w')
+outfile.write('var zipBorderLatLongs = new Array();\n')
 data = json.load(f)
 features = data['features']
 for feature in features:
@@ -111,16 +111,23 @@ for feature in features:
 	zipcode = feature["properties"]["ZIPCODE1"]
 	if zipcode in moco_zips:
 		print(zipcode + ' ' + zip_colors[zipcode])
-		outfile.write('otherMap = new Map();\n')
-		outfile.write("otherMap.set('name', '{0}')\n".format(feature["properties"]["ZIPNAME"]))
-		outfile.write("otherMap.set('fillcolor', '#{0}')\n".format(zip_colors[zipcode]))
-		outfile.write("otherMap.set('tooltip', '{0} {1}')\n".format(feature["properties"]["ZIPNAME"], feature["properties"]["ZIPCODE1"]))
-		coordinates = feature["geometry"]["coordinates"][0][0]
-		coordinates_list = []
-		for coord in coordinates:
-			coordinates_list.append("[ {0}, {1} ]\n".format(coord[1],coord[0]))
-		coordinates_string = "[" + ", ".join(coordinates_list) + "]"
-		outfile.write("otherMap.set('coordinates',{0})\n".format(coordinates_string))
-		outfile.write("zipBorderLatLongs.set('{0}', otherMap)\n".format(zipcode));
+		
+		coordinates_level_0 = feature["geometry"]["coordinates"]
+		print("Number of coordinates_level_1 for {0} {1}: {2}".format(feature["properties"]["ZIPNAME"], feature["properties"]["ZIPCODE1"], len(feature["geometry"]["coordinates"])))
+		for coordinates_level_1 in coordinates_level_0:
+
+			for coordinates_level_2 in coordinates_level_1:
+				coordinates_list = []
+				for coord in coordinates_level_2:
+					coordinates_list.append("[ {0}, {1} ]".format(coord[1],coord[0]))
+
+				coordinates_string = "[" + ", ".join(coordinates_list) + "]"
+				outfile.write('otherMap = new Map();\n')
+				outfile.write("otherMap.set('zipcode', '{0}')\n".format(feature["properties"]["ZIPCODE1"]))
+				outfile.write("otherMap.set('name', '{0}')\n".format(feature["properties"]["ZIPNAME"]))
+				outfile.write("otherMap.set('fillcolor', '#{0}')\n".format(zip_colors[zipcode]))
+				outfile.write("otherMap.set('tooltip', '{0} {1}')\n".format(feature["properties"]["ZIPNAME"], feature["properties"]["ZIPCODE1"]))
+				outfile.write("otherMap.set('coordinates',{0})\n".format(coordinates_string))
+				outfile.write("zipBorderLatLongs.push(otherMap)\n".format(zipcode));
 f.close()
 outfile.close()
